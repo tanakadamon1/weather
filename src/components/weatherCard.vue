@@ -35,10 +35,11 @@ function filterNoonForecasts(forecastList) {
 </script>
 <template>
 <div class="">
-    <p>{{ weather }}</p>
-    <img :src="icon" alt="">
-    <p v-if="temperature">現在の気温 : {{ temperature }}°</p>
-    
+    <div v-if="weather" class="day">
+        <p>{{ weather }}</p>
+        <img :src="icon" alt="">
+        <p v-if="temperature">現在の気温 : {{ temperature }}℃</p>
+    </div>
 
     <div v-if="forecastList.length">
   <h2>12時の天気予報（5日分）</h2>
@@ -52,10 +53,21 @@ function filterNoonForecasts(forecastList) {
 </div>
 </template>
 <style scoped>
+.day{
+    border: 1px solid #333;
+    box-shadow: 4px 4px 6px #3333333a;
+    max-width: 260px;
+    text-align: center;
+    margin-top: 24px;
+    border-radius: 8px;
+    padding: 8px;
+}
 h2{
     margin-top: 36px;
+    margin-bottom: 24px;
 }
 li{
     list-style: none;
+    margin-bottom: 8px;
 }
 </style>
