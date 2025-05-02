@@ -14,3 +14,15 @@ watchEffect(() => {
   <SearchForm v-model:prefecture="prefecture" />
   <weatherCard v-model:prefecture="prefecture" />
 </template>
+
+<style>
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#app{
+  max-width: 1000px;
+  margin: 36px auto;
+}
+</style>
